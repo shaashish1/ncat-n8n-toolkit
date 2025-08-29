@@ -33,6 +33,46 @@ Join the **[No-Code Architects Community](https://www.skool.com/no-code-architec
 
 ---
 
+## 🚀 Full-Stack Docker Setup (5 Containers)
+
+**New!** Complete development environment with 5 interconnected containers:
+
+- **ncat-media-toolkit**: NCA Toolkit API with FFmpeg processing
+- **n8n-app**: Workflow automation with built-in FFmpeg
+- **minio**: S3-compatible object storage
+- **n8n-postgres**: PostgreSQL database for workflow persistence  
+- **ollama-cpu**: Local AI/LLM processing engine
+
+### Quick Start:
+```bash
+# Start all 5 containers
+./start-full-stack.sh
+
+# Or manually:
+cp .env.full-stack.example .env.full-stack
+docker compose -f docker-compose.full-stack.yml up -d
+```
+
+### Access URLs:
+- **NCA Toolkit API**: http://localhost:8080
+- **n8n Interface**: http://localhost:5678
+- **MinIO Console**: http://localhost:9001
+- **Ollama AI API**: http://localhost:11434
+- **PostgreSQL**: localhost:5432
+
+📚 **Complete Documentation**: [docker-compose.full-stack.md](docker-compose.full-stack.md)  
+🔗 **All Communication URLs**: [CONTAINER_URLS.md](CONTAINER_URLS.md)
+
+### Shared Folders:
+```
+./shared-files/
+├── ffmpeg-input/    # Input files (accessible by all containers)
+├── ffmpeg-output/   # Processed files (accessible by all containers)
+└── general/         # General shared files
+```
+
+---
+
 ## API Endpoints
 
 Each endpoint is supported by robust payload validation and detailed API documentation to facilitate easy integration and usage.
